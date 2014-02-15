@@ -832,3 +832,14 @@ if has_key($rabbitmq_values, 'install') and $rabbitmq_values['install'] == 1 {
   }
 }
 
+# Begin gems
+
+if $ruby_values == undef {
+  $ruby_values = hiera('ruby', false)
+}
+
+if count($ruby_values['gems']) > 0 {
+  each( $ruby_values['gems'] ) |$package, $version| {
+    package { $package: ensure => $version, provider => 'gem'  }
+  }
+}

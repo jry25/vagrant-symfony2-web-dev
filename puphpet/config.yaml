@@ -125,4 +125,7 @@ beanstalkd:
 rabbitmq:
     install: 0
     port: '5672'
-
+ruby:
+    gems:
+        sass:  'latest'
+        compass:  'latest'
