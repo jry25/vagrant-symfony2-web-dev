@@ -843,3 +843,17 @@ if count($ruby_values['gems']) > 0 {
     package { $package: ensure => $version, provider => 'gem'  }
   }
 }
+
+# Begin nodejs
+
+include nodejs
+
+if $nodejs_values == undef {
+  $nodejs_values = hiera('nodejs', false)
+}
+
+if count($nodejs_values['packages']) > 0 {
+  each( $nodejs_values['packages'] ) |$package, $version| {
+    package { $package: ensure => $version, provider => 'npm', require => Class['nodejs'] }
+  }
+}

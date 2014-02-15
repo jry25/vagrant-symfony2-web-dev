@@ -129,3 +129,9 @@ ruby:
     gems:
         sass:  'latest'
         compass:  'latest'
+nodejs:
+    packages:
+        yo:  'present'
+        grunt-cli:  'present'
+        bower:  'present'
+        cordova:  'present'
