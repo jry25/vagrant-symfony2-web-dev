@@ -6,6 +6,8 @@ vagrantfile-local:
         hostname: null
         network:
             private_network: 192.168.56.101
+            public_network:
+                bridge:  'en1: Wi-Fi (AirPort)'
             forwarded_port: {  }
         provider:
             virtualbox:
@@ -27,7 +29,7 @@ vagrantfile-local:
                 id: vagrant-root
                 source: ../
                 target: /var/www
-                nfs: 'false'
+                nfs: 'true'
         usable_port_range: 2200..2250
     ssh:
         host: null
@@ -65,6 +67,7 @@ apache:
             servername: local.dev
             serveraliases:
                 - www.local.dev
+                - local.dev
             docroot: /var/www/
             port: '80'
             setenv:
@@ -77,6 +80,8 @@ apache:
     mpm_module: prefork
     mod_pagespeed: 0
     mod_spdy: 0
+symfony:
+    cache_and_logs_dir: '/var/symfony'
 php:
     version: '54'
     composer: '1'
