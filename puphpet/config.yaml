@@ -25,7 +25,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            t83aIgI4faeF:
+            workspace:
                 id: vagrant-root
                 source: ../
                 target: /var/www
@@ -64,7 +64,7 @@ apache:
         - php
         - rewrite
     vhosts:
-        iGO0dBeLjilk:
+        workspace:
             servername: local.dev
             serveraliases:
                 - www.local.dev
