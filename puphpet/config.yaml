@@ -44,7 +44,8 @@ vagrantfile-local:
     vagrant:
         host: detect
 server:
-    packages: {  }
+    packages:
+        - acl
     dot_files:
         -
             bash_aliases: null
@@ -78,7 +79,7 @@ apache:
     group: www-data
     default_vhost: true
     mpm_module: prefork
-    mod_pagespeed: 0
+    mod_pagespeed: '1'
     mod_spdy: 0
 symfony:
     cache_and_logs_dir: '/var/symfony'
