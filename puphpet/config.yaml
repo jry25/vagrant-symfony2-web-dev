@@ -65,8 +65,11 @@ apache:
     modules:
         - php
         - rewrite
+        - autoindex
+        - dir
     vhosts:
         workspace:
+            default_vhost: true
             servername: local.dev
             serveraliases:
                 - www.local.dev
