@@ -72,6 +72,16 @@ apache:
                 - www.local.dev
                 - local.dev
             docroot: /var/www/
+            directories:
+                path: '/var/www'
+                options:
+                    - Indexes
+                    - FollowSymLinks
+                    - MultiViews
+                allow_override:
+                    - All
+                override:
+                    - All
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -79,7 +89,7 @@ apache:
                 - All
     user: www-data
     group: www-data
-    default_vhost: true
+    default_vhost: false
     mpm_module: prefork
     mod_pagespeed: '1'
     mod_spdy: 0
