@@ -1,1 +1,4 @@
 backup
+config.yaml
+*.sublime-project
+*.sublime-workspace
