@@ -2,3 +2,4 @@ backup
 config.yaml
 *.sublime-project
 *.sublime-workspace
+puphpet/files/dot/ssh
